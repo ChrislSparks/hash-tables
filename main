@@ -1,0 +1,36 @@
+#include <iostream>
+#include "HashTable.h"
+using namespace std;
+
+int main()
+{
+    HashTable hashTable(7);
+
+    // Insert key-value pairs into the hash table.
+    hashTable.insert("Apple", 15);
+    hashTable.insert("Banana", 12);
+    hashTable.insert("Orange", 24);
+    hashTable.insert("Pear", 18);
+    hashTable.insert("Grape", 9);
+
+    hashTable.printTable();
+
+    cout << "\nSearching for Pear...\n";
+
+    if (hashTable.search("Pear"))
+    {
+        cout << "Key Found\n";
+    }
+    else
+    {
+        cout << "Key Not Found\n";
+    }
+
+    cout << "\nRemoving Orange...\n";
+    hashTable.remove("Orange");
+
+    cout << "\nUpdated Hash Table\n\n";
+    hashTable.printTable();
+
+    return 0;
+}
